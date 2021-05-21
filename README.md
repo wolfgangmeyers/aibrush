@@ -44,3 +44,16 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Troubleshooting Notes:
+This app was created using the tutorial at: https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/
+
+However, the instructions don't completely work. Taking notes:
+
+CLI is out of sync in the CI system: https://github.com/aws-amplify/amplify-cli/issues/6117
+Fix is to override the CLI version used in the admin ui under build settings / build image settings.
+Add a package override for amplify CLI version, set it to the output of `amplify --version`
+
+Also need to create an amplify service role, which isn't mentioned
+in the tutorial.
