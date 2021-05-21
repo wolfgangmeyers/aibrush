@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "aibrushae50ef80": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
