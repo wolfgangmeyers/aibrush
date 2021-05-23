@@ -1,0 +1,7 @@
+Notes on how this will work
+
+Submit phrase to be generated, specify iterations (default to 100) - optionally specify parent to resume
+* Maybe advanced option to reset the optimizer
+List image results
+Each new phrase goes into a list
+Generate suggestions based on a phrase

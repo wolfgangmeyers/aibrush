@@ -1,0 +1,50 @@
+# type Task
+#   @model
+#   @auth(
+#     rules: [
+#       { allow: groups, groups: ["Managers"], queries: null, mutations: [create, update, delete] }
+#       { allow: groups, groups: ["Employees"], queries: [get, list], mutations: null }
+#     ]
+#   ) {
+#   id: ID!
+#   title: String!
+#   description: String
+#   status: String
+# }
+# type PrivateNote @model @auth(rules: [{ allow: owner }]) {
+#   id: ID!
+#   content: String!
+# }
+
+type Dream
+  @model
+  @auth(
+    { allow: groups, groups: ["Admins"], queries: [get, list], mutations: [create, update, delete] }
+  ) {
+  id: ID!
+  phrase: String!
+  resultCount: Int!
+  completionCount: Int!
+  iterations: Int!
+  parent: ID
+}
+
+type Phrase
+  @model
+  @auth(
+    { allow: groups, groups: ["Admins"], queries: [get, list], mutations: [create, update, delete] }
+  ) {
+  id: ID!
+  phrase: String!
+  generated: Boolean!
+}
+
+type ImageResult
+  @model
+  @auth(
+    { allow: groups, groups: ["Admins"], queries: [get, list], mutations: [create, update, delete] }
+  ) {
+  id: ID!
+  phrase: String!
+  parent: ID
+}
